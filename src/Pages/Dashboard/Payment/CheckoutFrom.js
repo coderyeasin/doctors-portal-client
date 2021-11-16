@@ -20,7 +20,7 @@ const CheckoutFrom = ({ appoint }) => {
 
     //post c-card
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://radiant-hamlet-62916.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
@@ -87,7 +87,7 @@ const CheckoutFrom = ({ appoint }) => {
                 last4: paymentMethod.card.last4,
                 transcation: paymentIntent.client_secret.slice('_secret')[0]
             }
-            const url = `http://localhost:5000/appointments/${_id}`;
+            const url = `https://radiant-hamlet-62916.herokuapp.com/appointments/${_id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
